@@ -1,5 +1,4 @@
-from turtle import 
-
+from turtle import *
 from freegames import vector
 
 
