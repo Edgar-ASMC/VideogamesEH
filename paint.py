@@ -1,4 +1,4 @@
-from turtle import *
+from turtle import 
 
 from freegames import vector
 
@@ -28,8 +28,11 @@ def square(start, end):
 
 def circle(start, end):
     """Draw circle from start to end."""
-    pass  # TODO
+    t= turtle.Turtle()
+    r= 20
+    turtle.Turtle(r)
 
+    end_fill()
 
 def rectangle(start, end):
     """Draw rectangle from start to end."""
@@ -42,7 +45,7 @@ def triangle(start, end):
 
 
 def tap(x, y):
-    """Store starting point or draw shape."""
+    """Store start g point or draw shape."""
     start = state['start']
 
     if start is None:
