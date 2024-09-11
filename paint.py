@@ -28,7 +28,7 @@ def square(start, end):
 def circleDraw(start, end):
     """Draw circle from start to end."""
 
-    circle(r)
+    circle(20)
 
     end_fill()
 
