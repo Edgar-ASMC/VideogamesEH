@@ -1,3 +1,4 @@
+#mi vercion E
 from turtle import *
 from freegames import vector
 
@@ -34,13 +35,39 @@ def circle(start, end):
     end_fill()
 
 def rectangle(start, end):
-    """Draw rectangle from start to end."""
-    pass  # TODO
+    #empieza a dibujar con el lapiz
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(2):
+	#dibuja la primera linea (chiquita)
+       forward(end.x - start.x)
+       left(90)
+       #dibuja la segunda linea (la grande)
+       forward((end.x - start.x)+35)
+       left(90)
+
+    end_fill()
+
+
 
 
 def triangle(start, end):
     """Draw triangle from start to end."""
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(2):
+	#dibuja la liena y se mueve 60 grados
+        forward(end.x - start.x)
+        left(120)
+
+    end_fill()
+
 
 
 def tap(x, y):
