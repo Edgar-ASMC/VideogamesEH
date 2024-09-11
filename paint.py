@@ -25,10 +25,10 @@ def square(start, end):
     end_fill()
 
 
-def circle(start, end):
+def circleDraw(start, end):
     """Draw circle from start to end."""
-    c= turtle.circle(r)
-    onclick(c)
+
+    circle(r)
 
     end_fill()
 
@@ -77,9 +77,11 @@ onkey(lambda: color ('pink'), 'P')
 #SHAPES
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
-onkey(lambda: store('shape', circle), 'c')
+onkey(lambda: store('shape', circleDraw), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 done()
 
-
+#DEF
+#ONKEY- Activa algo si se presiona una tecla especifica
+#goto- va de un punto a otro
