@@ -11,7 +11,6 @@ def line(start, end):
 
 
 def square(start, end):
-
     """Draw square from start to end."""
     up()
     goto(start.x, start.y)
@@ -27,14 +26,18 @@ def square(start, end):
 
 def circleDraw(start, end):
     """Draw circle from start to end."""
+    penup()
+    up()
+    goto(start.x, start.y)
+    down()
+    goto(end.x, end.y)
+    begin_fill()
 
-    r= up()
-       goto(start.x, start.y)
-       down()
-       goto(end.x, end.y)
-
+    pendown()
+    xbase= (end.x-start.x)
+    ybase= (end.y-start.y)
+    r=(xbase + ybase)**1/2
     circle(r)
-
     end_fill()
 
 def rectangle(start, end):
@@ -78,6 +81,7 @@ onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: color ('pink'), 'P')
+onkey(lambda: color('yellow'), 'Y')
 
 #SHAPES
 onkey(lambda: store('shape', line), 'l')
