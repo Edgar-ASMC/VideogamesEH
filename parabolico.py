@@ -32,7 +32,7 @@ def draw():
 
     if inside(ball):
         goto(ball.x, ball.y)
-        dot(6, 'red')
+        dot(8, 'red')
 
     update()
 
@@ -62,9 +62,10 @@ def move():
 
     for target in targets:
         if not inside(target):
-            return
+           #Funcion goto()  resetea la posicion de la pelicula, haciendo asi que no se acabe este
+           goto(ball.x, ball.y)
 
-    ontimer(move, 50)
+    ontimer(move, 80)
 
 
 setup(420, 420, 370, 0)
