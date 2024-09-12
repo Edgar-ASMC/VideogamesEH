@@ -27,9 +27,7 @@ def square(start, end):
 def circleDraw(start, end):
     """Draw circle from start to end."""
     penup()
-    up()
     goto(start.x, start.y)
-    down()
     goto(end.x, end.y)
     begin_fill()
 
