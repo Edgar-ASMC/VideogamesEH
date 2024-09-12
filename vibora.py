@@ -8,10 +8,11 @@ food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
-#H
-colors = ['blue','pink','yellow','orange','purple']
-colorChoice = choice(colors)
-
+#Randomize colors for snake and fruit using choice()
+colors = ['cornflower blue','deep pink','gold','orange','orchid','medium spring green',"medium slate blue"]
+snakeColor = choice(colors)
+colors.remove(snakeColor)
+fruitColor = choice(colors)
 
 def change(x, y):
     """Change snake direction."""
@@ -46,9 +47,9 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, colorChoice)
+        square(body.x, body.y, 9, snakeColor)
 
-    square(food.x, food.y, 9, colorChoice)
+    square(food.x, food.y, 9, fruitColor)
     update()
     ontimer(move, 100)
 
