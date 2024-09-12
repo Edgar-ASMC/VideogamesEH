@@ -6,6 +6,7 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+M = 0
 
 
 def change(x, y):
@@ -35,6 +36,9 @@ def move():
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
+        # aumento la variable
+        global M
+        M = M+1
     else:
         snake.pop(0)
 
@@ -45,7 +49,8 @@ def move():
 
     square(food.x, food.y, 9, 'blue')
     update()
-    ontimer(move, 100)
+    #aumenta el movimiento
+    ontimer(move, 100-M)
 
 
 setup(420, 420, 370, 0)
