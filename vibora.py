@@ -1,4 +1,5 @@
 from random import randrange
+from random import choice
 from turtle import *
 
 from freegames import square, vector
@@ -6,6 +7,10 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+
+#H
+colors = ['blue','pink','yellow','orange','purple']
+colorChoice = choice(colors)
 
 
 def change(x, y):
@@ -41,9 +46,9 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, colorChoice)
 
-    square(food.x, food.y, 9, 'blue')
+    square(food.x, food.y, 9, colorChoice)
     update()
     ontimer(move, 100)
 
@@ -58,3 +63,4 @@ onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
 done()
+
