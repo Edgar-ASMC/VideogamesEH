@@ -13,4 +13,4 @@ Juegos incluidos:
 2. Serpiente. Un juego clasico de serpiente, mientras la serpiente no toque las paredes o choque contra si el juego continuara. 
 3. Pac-man. El clasico juego de Pac-Man [NOTA: este codigo no es funcional, sigue en producción]
 4. Cañon/tiro parabolico. Juego de cañon contra proyectiles. 
-5. Juego de memoria. Juego de encontrar pares de formas para mejorar la memoria. 
+5. Juego de memoria. Juego de encontrar pares de formas para mejorar la memoria. [NOTA: este codigo no es funcional, sigue en producción]
