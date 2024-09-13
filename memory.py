@@ -168,7 +168,7 @@ def draw():
 
         #dibuja las formas en ls tile
         forma_nombre, forma_color = tiles[mark]
-         if forma_nombre == 'heart':
+        if forma_nombre == 'heart':
             draw_heart(x, y, forma_color)
         elif forma_nombre == 'thunder':
             draw_thunder(x, y, forma_color)
