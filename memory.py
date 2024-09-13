@@ -7,7 +7,7 @@ car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
-
+counter=0
 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
@@ -45,6 +45,12 @@ def tap(x, y):
         state['mark'] = None
 
 
+   """Count taps"""
+   if onscreenclick(tap) is true:
+	   result= counter+1
+	   print("Taps:", result)
+
+
 def draw():
     """Draw image and tiles."""
     clear()
@@ -68,7 +74,6 @@ def draw():
 
     update()
     ontimer(draw, 100)
-
 
 shuffle(tiles)
 setup(420, 420, 370, 0)
