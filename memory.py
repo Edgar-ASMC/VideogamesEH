@@ -107,9 +107,8 @@ def draw_star(x, y, color):
 
 car = path('car.gif')
 tiles = list(range(32)) * 2
-state = {'mark': None}
+state = {'mark': None, 'taps': 0}
 hide = [True] * 64
-
 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
@@ -138,6 +137,7 @@ def tap(x, y):
     """Update mark and hidden tiles based on tap."""
     spot = index(x, y)
     mark = state['mark']
+    state['taps'] += 1
 
     if mark is None or mark == spot or tiles[mark] != tiles[spot]:
         state['mark'] = spot
@@ -185,8 +185,26 @@ def draw():
 
 
 
+    #TAPS HECHOS
+    up()
+    goto(0,200)
+    color('blue')
+    write(f"Taps: {state['taps']}", font=('comic sans',20,'normal'))
+
     update()
     ontimer(draw, 100)
+
+   #IF ALL TILES ARE CONNECTED, DISPLAY WINNING  MESSAGE
+   #The if checks if all values in hide (which are the tiles that hide the image) are false, if they are it means the person finished
+
+    if all(not h for h in hide):
+        up()
+        goto(0,0)
+        color('cornflower blue')
+        write(f"You won!! You did it in {state['taps']} taps", align='center',font('Arial', 40, 'bold'))
+
+    update()
+    ontimer(draw, 150)
 
 
 shuffle(tiles)
