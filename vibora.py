@@ -1,5 +1,6 @@
 from random import randrange
 from random import choice
+from random import randint
 from turtle import *
 
 from freegames import square, vector
@@ -20,11 +21,9 @@ def change(x, y):
     aim.x = x
     aim.y = y
 
-
 def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
-
 
 def move():
     """Move snake forward one segment."""
@@ -38,7 +37,11 @@ def move():
 
     snake.append(head)
 
-    if head == food:
+    food.x = food.x + randint(-1,1)
+    food.y = food.y + randint(-1,1)
+
+
+    if (abs(head.x - food.x) < 7) and (abs(head.y - food.y) < 7):
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
@@ -50,6 +53,7 @@ def move():
 
     clear()
 
+
     for body in snake:
         square(body.x, body.y, 9, snakeColor)
 
@@ -57,7 +61,6 @@ def move():
     update()
     #aumenta el movimiento
     ontimer(move, 100-M)
-
 
 setup(420, 420, 370, 0)
 hideturtle()
