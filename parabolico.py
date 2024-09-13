@@ -6,7 +6,8 @@ from freegames import vector
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
-
+# variable para el movimiento
+M = 0
 
 def tap(x, y):
     """Respond to screen tap."""
@@ -57,15 +58,18 @@ def move():
     for target in dupe:
         if abs(target - ball) > 13:
             targets.append(target)
-
+        else:
+            # aumenta la varible cuandop se elimina un objetivo
+            global M
+            M = M+3
     draw()
 
     for target in targets:
         if not inside(target):
            #Funcion goto()  resetea la posicion de la pelicula, haciendo asi que no se acabe este
            goto(ball.x, ball.y)
-
-    ontimer(move, 80)
+    # aumenta el movimiento
+    ontimer(move, 50-M)
 
 
 setup(420, 420, 370, 0)
