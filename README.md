@@ -1,7 +1,8 @@
 SEMANA TEC, HERRAMIENTAS COMPUTACIONALES: EL ARTE DE PROGRAMAR
 
 REPOSITORIO HECHO POR 
-EDGAR AÑORVE MAGAÑA /*
+EDGAR AÑORVE MAGAÑA
+
 HANNIA ESCAMILLA PÉREZ
 
 Para correr este repositorio es necesario contar con python3, pip y freegames
