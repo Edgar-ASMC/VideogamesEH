@@ -3,8 +3,13 @@ from turtle import *
 
 from freegames import path
 
+#cargar imagenes para las figuras
+figures = [f'figure{i}.gif' for i in range(16)]
+for figure in figures:
+    addshape(figure)
+
 car = path('car.gif')
-tiles = list(range(32)) * 2
+tiles = list(range(16)) * 2
 state = {'mark': None}
 hide = [True] * 64
 
@@ -56,15 +61,21 @@ def draw():
         if hide[count]:
             x, y = xy(count)
             square(x, y)
+        else:
+             # se usa la imagen correspondiente
+             x, y = xy(count)
+             shape(figures[tiles[count]])
+             goto(x, y)
+             stamp()
 
     mark = state['mark']
 
+    # se agusta a las formas
     if mark is not None and hide[mark]:
         x, y = xy(mark)
-        up()
-        goto(x + 2, y)
-        color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        shape(figures[tiles[mark]])
+        goto(x, y)
+        stamp()
 
     update()
     ontimer(draw, 100)
