@@ -197,14 +197,14 @@ def draw():
    #IF ALL TILES ARE CONNECTED, DISPLAY WINNING  MESSAGE
    #The if checks if all values in hide (which are the tiles that hide the image) are false, if they are it means the person finished
 
-    if all(not h for h in hide):
-        up()
-        goto(0,0)
-        color('cornflower blue')
-        write(f"You won!! You did it in {state['taps']} taps", align='center',font('Arial', 40, 'bold'))
+ #   if all(not h for h in hide):
+ #       up()
+ #       goto(0,0)
+ #       color('Blue')
+ #       write(f"You won!! You did it in {state['taps']} taps", align='center',font('Arial', 40, 'bold'))
 
-    update()
-    ontimer(draw, 150)
+#   update()
+#    ontimer(draw, 100)
 
 
 shuffle(tiles)
